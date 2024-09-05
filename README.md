@@ -1,91 +1,98 @@
 # proxy_server_with_cache [Roadmap project](https://roadmap.sh/projects/caching-server)
 A simple proxy server with cache, implemented using javascript
 [Repository](https://github.com/Lucian11-LA/proxy_server_with_cache)
-# Servidor Proxy com Cache em Node.js
+# Proxy Server with Cache in Node.js
 
-Este projeto implementa um servidor proxy com cache em Node.js. O proxy recebe solicitações de um cliente, as encaminha para um servidor de origem, e armazena as respostas em cache para melhorar o desempenho em futuras solicitações.
+This project implements a proxy server with cache in Node.js. The proxy receives requests from a client, forwards them to a source server, and caches responses to improve performance on future requests.
 
-## Funcionalidades
+## Features
 
-- **Encaminhamento de Solicitações:** Recebe solicitações e as encaminha para um servidor de origem especificado.
-- **Cache de Respostas:** Armazena respostas em cache para acelerar respostas a solicitações repetidas.
-- **Cabeçalhos Informativos:** Adiciona o cabeçalho `X-Cache` para indicar se a resposta foi obtida do cache (`HIT`) ou do servidor de origem (`MISS`).
-- **Limpeza de Cache:** Permite a limpeza do cache quando necessário.
+- **Request Forwarding:** Receives requests and forwards them to a specified source server.
 
-## Como Usar
+- **Answer Cache:** Stores answers in cache to speed up responses to repeated requests.
 
-### Requisitos
+- **Informative Headers:** Adds the `X-Cache` header to indicate whether the answer was obtained from the cache (`HIT`) or from the source server (`MISS`).
 
-Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em seu sistema. Você também precisará do pacote `yargs` para analisar argumentos de linha de comando.
+- **Cache Cleaning:** Allows you to clean the cache when necessary.
 
-### Instalação
+## How To Use
 
-Clone o repositório e instale as dependências:
+### Requirements
 
+Make sure you have [Node.js](https://nodejs.org/) installed on your system. You will also need the `yargs` package to analyze command line arguments.
+
+### Installation
+
+Clone the repository and install the dependencies:
 ```bash
 git clone <URL_DO_REPOSITORIO>
 cd <NOME_DO_REPOSITORIO>
 npm install
 ```
 
-### Inicializar o Servidor
+### Initialize the Server
 
-Para iniciar o servidor proxy, use o seguinte comando:
-
+To start the proxy server, use the following command:
 ```bash
 node caching-proxy.js --port <PORTA> --origin <URL_DO_SERVIDOR_DE_ORIGEM>
 ```
 
-Substitua `<PORTA>` pela porta desejada para o servidor proxy e `<URL_DO_SERVIDOR_DE_ORIGEM>` pela URL do servidor ao qual as solicitações serão encaminhadas.
+Replace `<PORT>` with the desired port for the proxy server and `<SOURCE_SERVER_URL>` with the URL of the server to which the requests will be forwarded.
 
-### Limpar o Cache
+### Clear the Cache
 
-Para limpar o cache, execute:
+To clear the cache, run:
 
 ```bash
 node caching-proxy.js --clear-cache
 ```
 
-### Exemplo de Uso
+### Example of Use
 
-Para iniciar o servidor proxy na porta 3000 e encaminhar solicitações para `http://dummyjson.com`, use:
-
+To start the proxy server on port 3000 and forward requests to `http://dummyjson.com`, use:
 ```bash
 node caching-proxy.js --port 3000 --origin http://dummyjson.com
 ```
 
-### Comportamento do Cache
+### Cache Behavior
 
-- **Primeira Solicitação:** A resposta será obtida do servidor de origem e armazenada em cache.
-- **Solicitações Repetidas:** Se a resposta estiver em cache, o servidor proxy retornará a resposta do cache com o cabeçalho `X-Cache: HIT`.
-- **Resposta do Servidor de Origem:** Se a resposta não estiver em cache, o servidor proxy retornará a resposta do servidor de origem com o cabeçalho `X-Cache: MISS`.
+- **First Request:** The answer will be obtained from the source server and cached.
 
-## Estrutura do Projeto
+- **Repeated requests:** If the response is cached, the proxy server will return the cache response with the header `X-Cache: HIT`.
 
-- `caching-proxy.js`: Código principal do servidor proxy.
-- `cache/`: Diretório onde as respostas em cache são armazenadas.
+- **Source Server Response:** If the response is not cached, the proxy server will return the source server response with the `X-Cache: MISS` header.
 
-## Testes
+## Project Structure
 
-Você pode realizar os seguintes testes para verificar o funcionamento do servidor proxy:
+- `caching-proxy.js`: Proxy server main code.
 
-- **Teste de Inicialização:** Verifique se o servidor inicia corretamente na porta especificada.
-- **Teste de Requisição Simples:** Verifique se o servidor proxy encaminha as solicitações corretamente.
-- **Teste de Armazenamento em Cache:** Verifique se as respostas são armazenadas e retornadas corretamente.
-- **Teste de Resposta de Cache:** Verifique se o cache está funcionando para solicitações repetidas.
-- **Teste de Limpeza de Cache:** Verifique se o comando de limpeza remove os arquivos de cache.
+- `cache/`: Directory where cached answers are stored.
 
-## Contribuições
+## Tests
 
-Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões para melhorias, sinta-se à vontade para abrir um [issue](https://github.com/Lucian11-LA/proxy_server_with_cache/) ou enviar um [pull request](https://github.com/Lucian11-LA/proxy_server_with_cache/).
+You can perform the following tests to verify the operation of the proxy server:
 
-## Licença
+- **Startup Test:** Check if the server starts correctly on the specified port.
 
-Este projeto está licenciado sob a [Apache License](LICENSE).
+- **Simple Request Test:** Check if the proxy server forwards the requests correctly.
 
-## Contato
+- **Cache Storage Test:** Check if the answers are stored and returned correctly.
 
-Para mais informações, entre em contato:
+- **Cache Response Test:** Check if the cache is working for repeated requests.
+
+- **Cache Cleaning Test:** Check if the cleaning command removes the cache files.
+
+## Contributions
+
+Contributions are welcome! If you encounter any problems or have suggestions for improvements, feel free to open an [issue](https://github.com/Lucian11-LA/proxy_server_with_cache/) or send a [pull request](https://github.com/Lucian11-LA/proxy_server_with_cache/).
+
+## License
+
+This project is licensed under the [Apache License] (LICENSE).
+
+## Contact
+
+For more information, please contact:
 
 - [lucian alfred](mailto:lucianalfred60@example.com)
 - [LinkedIn](https://www.linkedin.com/in/luciano-alfredo-7babbb216/)
