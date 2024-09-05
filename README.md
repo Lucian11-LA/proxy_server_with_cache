@@ -1,1 +1,1 @@
-[imagem](proxy.png)
+![imagem](proxy.png)
