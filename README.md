@@ -87,5 +87,5 @@ Este projeto está licenciado sob a [Apache License](LICENSE).
 
 Para mais informações, entre em contato:
 
-- [Seu Nome](mailto:lucianalfred60@example.com)
-- [Seu LinkedIn](https://www.linkedin.com/in/luciano-alfredo-7babbb216/)
+- [lucian alfred](mailto:lucianalfred60@example.com)
+- [LinkedIn](https://www.linkedin.com/in/luciano-alfredo-7babbb216/)
