@@ -1,0 +1,8 @@
+ Explicação
+Diretório de Cache: As respostas em cache são armazenadas em um diretório chamado cache. Cada resposta em cache é nomeada usando um valor hash da URL da solicitação.
+Tratamento de Solicitações: O servidor verifica se uma resposta em cache existe. Se existir, ela é retornada com o cabeçalho X-Cache: HIT. Caso contrário, o servidor obtém a resposta do servidor de origem, armazena a resposta em cache e a retorna com o cabeçalho X-Cache: MISS.
+Chave do Cache: A chave do cache é gerada usando um hash MD5 da URL completa para garantir entradas de cache exclusivas para solicitações diferentes.
+5. Considerações
+Tratamento de Erros: Um tratamento de erros mais robusto pode ser adicionado para gerenciar diferentes tipos de erros HTTP ou problemas de rede.
+Expiração do Cache: A implementação atual não lida com a expiração do cache. Você pode querer adicionar lógica para gerenciar a vida útil do cache.
+Cabeçalhos: A implementação não preserva todos os cabeçalhos do servidor de origem. Você pode precisar incluir cabeçalhos adicionais, se necessário.
